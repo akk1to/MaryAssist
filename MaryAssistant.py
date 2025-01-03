@@ -176,7 +176,7 @@ receive = True # Stop Flag - Used when the user wants to stop the assistant
 def callMary():
     global receive
     # Access key of Picovoice service
-    access_key = "/91nRu+Qi2UYHIP1FKRVpwJKMBSjQFL2KrYLWcQrs/vVmRINrD0HBw=="
+    access_key = "PaoPKB9xiLPidVlONAYuLcwrdKe/98cAqUIW4AmD9+ZwK9Csi2EALQ=="
     # Initialize the "mary mary" keyword model
     porcupine = pvporcupine.create (
         access_key=access_key,
