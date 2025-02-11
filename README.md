@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/diced/zipline/trunk/public/zipline_small.png"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=280&color=gradient&text=MaryAssit&textBg=false&section=header"/>
   
 A friendly virtual assistant, in purpose to helping Windows user automate their task
 
@@ -41,6 +41,8 @@ Since the project is still in development, we currently offer only a few basic f
 ## Future enhancement
 
 - [ ] Integrating an advanced LLM model, such as ChatGPT 2.0, as the core assistant in future updates.
+- [ ] Support other languages, such as English.
+- [ ] Add debug logging features.
 - [ ] Enable users to automate tasks in their web browser.
 - [ ] Improve response speed for a smoother and more efficient user experience.
 - [ ] Redesign the UX/UI for a more user-friendly and intuitive interface.
@@ -112,3 +114,55 @@ Just power up the assistant through this command:
 ```bash
 python MaryAssist.py
 ```
+#### Step 6: Test our assistant
+You can now activate our assistant by saying "Mary Mary" or clicking the microphone icon and giving a command!
+
+If you encounter any bugs or errors, please let us know—we're always working to improve your experience!
+
+> [!WARNING]
+> Our assistant is still in development and currently supports only Vietnamese. We plan to add support for more languages in the future!
+
+## How to use?
+You can simply say "Mary Mary" or click the microphone icon to give a command in Vietnamese! Our assistant will process your request and respond as quickly as possible. Here are some things you can do with it:
+
+<details>
+<summary>Display the current system date and time</summary>
+Say "Mary Mary" or click the microphone icon to activate MaryAssist. Then, try asking: "Bây giờ là mấy giờ?"/"Hôm nay là ngày mấy?"/"Hôm nay là ngày bao nhiêu?" MaryAssist will process your command and respond instantly!
+</details>
+<details>
+<summary>Open applications on your computer</summary>
+</details>
+<details>
+<summary>Perform search on Google</summary>
+</details>
+
+For more examples see the [guide documentation](https://github.com)
+
+## Contributing
+We appreciate contributions! Feel free to report bugs or suggest new features by opening an issue. You can also fork our repository, make improvements, and submit a pull request! We'll review it and get back to you as soon as possible.
+### Bug reports
+Create an issue on GitHub and use the template, please include the following (if one of them is not applicable to the issue then it's not needed):
+- The steps to reproduce the bug
+- Logs of MaryAssit (you can found it at `%appdata%/MaryAssit/logs/lastest.log`)
+- The version of MaryAssit (lastest or v1.x.x)
+- Your OS & Browser (including server OS)
+- What you were expecting to see
+### Feature requests
+Create a discussion on GitHub, please include the following:
+- Brief explanation of the feature in the title (very brief please)
+- How it would work (Be detailed!)
+### Pull Requests
+Create a pull request on GitHub. If your PR does not pass the action checks, then please fix the errors. If your PR was submitted before a release, and I have pushed a new release, please make sure to update your PR to reflect any changes, usually this is handled by GitHub. If your PR is not checked by us, mention [TofuAI](https://github.com/TofuAI) or [akk1to.dev](https://github.com/akk1to) in the PR!
+
+## Documentation (not working yet)
+Documentation source code is located in [akk1to/MaryAssit-docs](https://github.com/akk1to/MaryAssit-docs), and can be accessed [here](https://maryassit.is-a.dev/docs).
+
+## Changelog
+- [x] 12/1/2025 (@akk1to.dev): Modify the branch rules and add the [nobuild] tag. Preparing to compile the first version into an executable file.
+
+## Contact the developer
+Feel free to contact akk1to.dev (Discord: @akk1to.dev) or TofuAI (only mention through discussion).
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=280&section=footer"/>
+</div>
