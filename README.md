@@ -164,5 +164,5 @@ Documentation source code is located in [akk1to/MaryAssit-docs](https://github.c
 Feel free to contact akk1to.dev (Discord: @akk1to.dev) or TofuAI (only mention through discussion).
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=280&section=footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=150&section=footer"/>
 </div>
