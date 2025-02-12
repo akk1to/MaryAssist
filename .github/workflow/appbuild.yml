@@ -1,0 +1,68 @@
+name: Build and deploy MaryAssist
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check commit message
+      id: check_commit_message
+      run: |
+        if echo "${{ github.event.head_commit.message }}" | grep -q '^\[nobuild\]'; then
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+    - name: Stop the workflow if skip deploy is true
+      if: steps.check_commit_message.outputs.skip == 'true'
+      run: |
+        echo "Skipping build due to commit message starting with [nobuild]"
+        exit 1
+    - name: Setup repository
+      uses: actions/checkout@v4
+    - name: Get current date
+      id: date
+      run: |
+        echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+    - name: Get current time
+      id: time
+      run: |
+        echo "time=$(date +'%H:%M:%S')" >> $GITHUB_ENV
+    - name: Set up Python environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        architecture: 'x64'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Get commit SHA
+      id: sha
+      run: |
+        echo "commit_sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+    - name: Build the application
+      uses: Nuitka/Nuitka-action@main
+      with:
+        nuitka-version: main
+        script-name: MaryAssist.py
+        mode: app
+    - name: Upload the build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release
+        path: build/MaryAssist.exe
+        include-hidden-files: true
+    - name: Publish release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "MaryAssit.exe"
+        tag: "Update ${{ steps.date.outputs.date }} ${{ steps.time.outputs.time }}"
+        genereateReleaseNotes: true
+    
